@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
               name="viewport"
               content="width=device-width, initial-scale=1.0"
             />
-            <title>AroundTheCode</title>
+            <title>Test</title>
           </Head>
           <Nprogress>
             <Component {...pageProps} />
