@@ -1,13 +1,12 @@
-import Layout from "@/components/Layout";
-import { Button } from "@mui/material";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter()
   return (
-    <Layout className="p-5">
-      <div className="uppercase">Template AroundTheCode</div>
-      <Button variant="contained" onClick={() => router.push('/pageDemo')}>Home</Button>
-    </Layout>
+    <Link
+      href="/testPage"
+      className="flex content-center gap-2 px-4 py-2 font-semibold text-white transition-colors duration-200 rounded-lg bg-primary-600 hover:bg-primary-700"
+    >
+      View Demo
+    </Link>
   )
 }

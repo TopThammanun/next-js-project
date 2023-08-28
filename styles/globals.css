@@ -10,7 +10,7 @@
 
 @layer base {
   * {
-    font-family: "Prompt", sans-serif;
+    font-family: "Prompt", sans-serif !important;
     margin: 0;
     padding: 0;
   }
