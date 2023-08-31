@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
-    const { user } = useUser();
+    const { user, isLoaded } = useUser();
     return (
-        <nav className=" bg-white w-full flex relative justify-between items-center mx-auto px-20 h-16 border-b mb-10">
+        <nav className=" bg-white w-full flex relative justify-between items-center mx-auto md:px-20 px-5 h-16 border-b mb-10">
             {/* logo */}
             <div className="inline-flex">
                 <div className="hidden md:block">
@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
                 <div className="inline-block">
                     <div className="inline-flex items-center max-w-full">
-                        <button className="flex items-center flex-grow-0 flex-shrink pl-2 relative w-80 border rounded-full px-1  py-1" type="button">
+                        <button className="flex items-center flex-grow-0 flex-shrink pl-2 relative w-80 border rounded-full px-1  py-1 bg-gray-50" type="button">
                             <div className="block flex-grow flex-shrink overflow-hidden">Start Search Something</div>
                             <div className="flex items-center justify-center relative  h-8 w-8 rounded-full">
                                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: 12, width: 12, stroke: 'currentcolor', strokeWidth: '5.33333', overflow: 'visible' }}>
