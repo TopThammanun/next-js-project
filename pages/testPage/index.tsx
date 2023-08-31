@@ -5,7 +5,7 @@ const TestPage = () => {
     const { user } = useUser();
     return (
         <div className="px-8 py-12 sm:py-16 md:px-20">
-            👋 Hi, {user?.fullName || `Stranger`}
+            👋 Hi, {user?.fullName || ""}
         </div>
     );
 }
