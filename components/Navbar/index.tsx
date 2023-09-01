@@ -5,7 +5,7 @@ import { useUser } from "@clerk/nextjs";
 const Navbar = () => {
     const { user, isLoaded } = useUser();
     return (
-        <nav className=" bg-white w-full flex relative justify-between items-center mx-auto md:px-20 px-5 h-16 border-b mb-10">
+        <nav className=" bg-white w-full flex relative justify-between items-center mx-auto px-5 h-16 border-b">
             {/* logo */}
             <div className="inline-flex">
                 <div className="hidden md:block">
