@@ -20,7 +20,7 @@ const BlogPost = (props: Props) => {
             <div className='col-span-7 flex flex-col justify-between'>
                 <div>
                     <h1 className='md:text-xl mb-4 text-base font-bold'>
-                        {props.header}
+                        {truncateHexString(props.header, 50)}
                     </h1>
                     <p className='text-base max-md:hidden'>
                         {truncateHexString(props.description, 400)}
