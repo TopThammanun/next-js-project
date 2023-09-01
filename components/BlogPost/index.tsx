@@ -23,7 +23,7 @@ const BlogPost = (props: Props) => {
                         {truncateHexString(props.header, 50)}
                     </h1>
                     <p className='text-base max-md:hidden'>
-                        {truncateHexString(props.description, 400)}
+                        {truncateHexString(props.description, 300)}
                     </p>
                 </div>
                 <div className='mt-4 flex gap-3 items-center'>
@@ -35,8 +35,8 @@ const BlogPost = (props: Props) => {
                 <Image
                     src={`/picture.jpg`}
                     alt='icon button'
-                    height={350}
-                    width={300}
+                    height={250}
+                    width={200}
                 />
             </div>
         </div>
