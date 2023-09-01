@@ -7,6 +7,8 @@ type Props = {
     header: string
     description: string
     image?: string
+    tag?: string
+    updateDate?: string
 };
 
 const BlogPost = (props: Props) => {
@@ -24,9 +26,9 @@ const BlogPost = (props: Props) => {
                         {truncateHexString(props.description, 400)}
                     </p>
                 </div>
-                <div className='mt-4 flex gap-3'>
+                <div className='mt-4 flex gap-3 items-center'>
                     <Chip label='HelloTags' color='default' />
-                    <Chip label='HelloTags' color='default' />
+                    <p className='text-xs text-gray-500'>Last Update 9/1/2023</p>
                 </div>
             </div>
             <div className='col-span-3 ml-7 h-full flex items-center'>
