@@ -7,12 +7,14 @@ const queryClient = new QueryClient();
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/config/materialUI/theme";
 import Nprogress from '@/components/Nprogress';
-import Layout from '@/components/Layout';
-import type { AppProps } from 'next/app'
 import InjectTailwind from '@/pages/InjectTailwind';
+import { ReactElement } from 'react';
 import { ClerkProvider } from '@clerk/nextjs'
+import { AppPropsWithLayout } from '@/types/layout/AppPropsWithLayout';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page: ReactElement) => page);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
@@ -26,9 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <title>next-js-project</title>
             </Head>
             <Nprogress>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
+              {getLayout(<Component {...pageProps} />)}
             </Nprogress>
           </InjectTailwind>
         </ClerkProvider>
