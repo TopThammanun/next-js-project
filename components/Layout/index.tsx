@@ -24,9 +24,64 @@ const Layout = (props: Props) => {
           </div>
         </div>
         <div className="max-md:hidden">
-          <div className="h-[calc(100dvh-4rem)] min-w-[30rem] border-l transition-all sticky top-0">
-            <PerfectScrollbar className="px-5">
-              <div></div>
+          <div className="h-[100dvh] min-w-[25rem] border-l transition-all sticky top-0">
+            <PerfectScrollbar className="px-5 pt-6">
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
+              <div className="bg-gray-200 rounded-xl p-3 m-2">Hello</div>
             </PerfectScrollbar>
           </div>
         </div>

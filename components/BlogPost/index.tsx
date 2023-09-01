@@ -19,10 +19,10 @@ const BlogPost = (props: Props) => {
     <div className="grid grid-cols-10 gap-2 cursor-pointer border-b border-gray-300 md:pb-10 pb-5 md:mb-10 mb-5">
       <div className="col-span-7 flex flex-col justify-between">
         <div>
-          <h1 className="md:text-xl mb-4 text-base font-bold">
+          <h1 className="lg:text-xl md:text-lg text-base mb-4 font-bold">
             {truncateHexString(props.header, 50)}
           </h1>
-          <p className="text-base max-md:hidden">
+          <p className="text-sm max-md:hidden">
             {truncateHexString(props.description, 300)}
           </p>
         </div>
@@ -35,8 +35,8 @@ const BlogPost = (props: Props) => {
         <Image
           src={`/picture.jpg`}
           alt="icon button"
-          height={250}
-          width={200}
+          height={200}
+          width={300}
         />
       </div>
     </div>
