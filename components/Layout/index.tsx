@@ -20,7 +20,7 @@ const Layout = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="max-md:hidden">
+        <div className="max-lg:hidden">
           <div className="h-[100dvh] min-w-[25rem] border-l transition-all sticky top-0">
             <SlideBar />
           </div>
