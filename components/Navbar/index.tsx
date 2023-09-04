@@ -13,7 +13,7 @@ import useRouter from "next/router";
 const Navbar = () => {
     const { isSignedIn, isLoaded } = useUser();
     return (
-        <nav className=" bg-white w-full flex relative justify-between items-center mx-auto px-5 h-16 border-b">
+        <nav className=" bg-white w-full flex justify-between items-center mx-auto px-5 h-16 border-b sticky top-0 z-30 p-6 ">
             <div className="inline-flex cursor-pointer"
                 onClick={() => {
                     useRouter.push("/");
