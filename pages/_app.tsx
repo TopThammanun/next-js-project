@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <ClerkProvider>
+      <ClerkProvider>
+        <ThemeProvider theme={theme}>
           <InjectTailwind>
             <Head>
               <meta
@@ -31,8 +31,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
               {getLayout(<Component {...pageProps} />)}
             </Nprogress>
           </InjectTailwind>
-        </ClerkProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </ClerkProvider>
     </QueryClientProvider>
   )
 }

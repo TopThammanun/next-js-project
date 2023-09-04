@@ -1,13 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
+import {
+    OrganizationSwitcher,
+    SignedIn,
+    UserButton
+} from "@clerk/nextjs";
+import SpinerLoading from "../SpinerLoading";
+import { Button } from "@mui/material";
+import useRouter from "next/router";
 
 const Navbar = () => {
-    const { user, isLoaded } = useUser();
+    const { isSignedIn, isLoaded } = useUser();
     return (
         <nav className=" bg-white w-full flex relative justify-between items-center mx-auto px-5 h-16 border-b">
-            {/* logo */}
-            <div className="inline-flex">
+            <div className="inline-flex cursor-pointer"
+                onClick={() => {
+                    useRouter.push("/");
+                }}>
                 <div className="hidden md:block">
                     <svg xmlns="http://www.w3.org/2000/svg" width={50} height={32} fill="currentcolor" style={{ display: 'block' }} viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M11.47 2.152a1 1 0 0 1 1.06 0l6.904 4.315L12 10.84L4.566 6.467l6.904-4.315zM3.008 7.871A1.001 1.001 0 0 0 3 8v8a1 1 0 0 0 .47.848L11 21.554v-8.982L3.008 7.87zM13 21.554l7.53-4.706A1 1 0 0 0 21 16V8c0-.043-.003-.087-.008-.129L13 12.571v8.983z" clip-rule="evenodd" /></svg>
                 </div>
@@ -15,8 +25,6 @@ const Navbar = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" width={30} height={32} fill="currentcolor" style={{ display: 'block' }} viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M11.47 2.152a1 1 0 0 1 1.06 0l6.904 4.315L12 10.84L4.566 6.467l6.904-4.315zM3.008 7.871A1.001 1.001 0 0 0 3 8v8a1 1 0 0 0 .47.848L11 21.554v-8.982L3.008 7.87zM13 21.554l7.53-4.706A1 1 0 0 0 21 16V8c0-.043-.003-.087-.008-.129L13 12.571v8.983z" clip-rule="evenodd" /></svg>
                 </div>
             </div>
-            {/* end logo */}
-            {/* search bar */}
             <div className="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
                 <div className="inline-block">
                     <div className="inline-flex items-center max-w-full">
@@ -33,25 +41,35 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            {/* end search bar */}
-            <div className="flex-initial">
-                <div className="flex justify-end items-center relative">
-                    <div className="inline relative">
-                        {user?.imageUrl ? (
-                            <div className="px-8 py-1">
-                                <img
-                                    src={user.imageUrl}
-                                    className="rounded-full w-10 h-10"
+            {
+                !isLoaded ? <SpinerLoading /> : (<div className="flex-initial">
+                    <div className="flex justify-end items-center relative">
+                        <SignedIn>
+                            <div className="hidden sm:block">
+                                <OrganizationSwitcher afterCreateOrganizationUrl="/" />
+                            </div>
+                            <div className="block sm:hidden">
+                                <OrganizationSwitcher
+                                    afterCreateOrganizationUrl="/"
+                                    appearance={{
+                                        elements: {
+                                            organizationSwitcherTriggerIcon: `hidden`,
+                                            organizationPreviewTextContainer: `hidden`,
+                                            organizationSwitcherTrigger: `pr-0`,
+                                        },
+                                    }}
                                 />
                             </div>
-                        ) : (<div className="block flex-grow-0 flex-shrink-0 h-10 w-12 p-1">
-                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', height: '100%', width: '100%', fill: 'currentcolor' }}>
-                                <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z" />
-                            </svg>
-                        </div>)}
+                            <UserButton afterSignOutUrl="/" />
+                        </SignedIn>
+                        {!isSignedIn && (<Button variant="contained"
+                            onClick={() => {
+                                useRouter.push("/sign-in");
+                            }}>Login</Button>)}
                     </div>
-                </div>
-            </div>
+                </div>)
+            }
+
         </nav>
 
     );
