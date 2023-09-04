@@ -17,22 +17,22 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ClerkProvider>
-        <ThemeProvider theme={theme}>
-          <InjectTailwind>
-            <Head>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1.0"
-              />
-              <title>next-js-project</title>
-            </Head>
-            <Nprogress>
+      <ThemeProvider theme={theme}>
+        <InjectTailwind>
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <title>next-js-project</title>
+          </Head>
+          <Nprogress>
+            <ClerkProvider {...pageProps}>
               {getLayout(<Component {...pageProps} />)}
-            </Nprogress>
-          </InjectTailwind>
-        </ThemeProvider>
-      </ClerkProvider>
-    </QueryClientProvider>
+            </ClerkProvider>
+          </Nprogress>
+        </InjectTailwind>
+      </ThemeProvider>
+    </QueryClientProvider >
   )
 }

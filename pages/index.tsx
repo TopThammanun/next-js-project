@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Fragment, ReactElement } from "react";
 import Layout from "@/components/Layout";
