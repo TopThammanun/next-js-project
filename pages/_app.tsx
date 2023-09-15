@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/styles.scss'
 import Head from 'next/head';
 //Use React Query
 import { QueryClient, QueryClientProvider } from 'react-query';

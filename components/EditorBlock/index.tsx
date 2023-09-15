@@ -1,5 +1,4 @@
 "use client";
-
 import { useEditor, EditorContent } from "@tiptap/react";
 import { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
