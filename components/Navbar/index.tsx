@@ -9,6 +9,9 @@ import {
 import SpinerLoading from "../SpinerLoading";
 import { Button } from "@mui/material";
 import useRouter from "next/router";
+import {
+    Swords
+} from "lucide-react";
 
 const Navbar = () => {
     const { isSignedIn, isLoaded } = useUser();
@@ -45,6 +48,12 @@ const Navbar = () => {
                 !isLoaded ? <SpinerLoading /> : (<div className="flex-initial">
                     <div className="flex justify-end items-center relative">
                         <SignedIn>
+                            <div className="mr-5 flex cursor-pointer text-gray-700 justify-center items-center" onClick={() => {
+                                useRouter.push("/write");
+                            }}>
+                                <Swords size={25} className="mr-2" />
+                                <div>Write</div>
+                            </div>
                             <div className="hidden sm:block">
                                 <OrganizationSwitcher afterCreateOrganizationUrl="/" />
                             </div>
@@ -67,10 +76,10 @@ const Navbar = () => {
                                 useRouter.push("/sign-in");
                             }}>Login</Button>)}
                     </div>
-                </div>)
+                </div >)
             }
 
-        </nav>
+        </nav >
 
     );
 };
