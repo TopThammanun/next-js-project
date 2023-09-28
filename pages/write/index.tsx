@@ -25,7 +25,7 @@ export default function Index() {
         } finally {
             setTimeout(() => {
                 setIsLoading(false);
-            }, 2000);
+            }, 3000);
         }
     }, []);
 
@@ -35,7 +35,7 @@ export default function Index() {
                 <Fragment>
                     <div className="max-lg:hidden">
                         <div className="h-[100dvh] min-w-[25rem] border-r transition-all sticky top-0">
-                            <SlideBarPost headContent={headContent} />
+                            <SlideBarPost headContent={headContent} setHeadContent={setHeadContent} />
                         </div>
                     </div>
                     <div className="z-10">

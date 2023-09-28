@@ -9,14 +9,19 @@ import {
 
 type Props = {
     headContent: Array<any>;
+    setHeadContent: any;
 };
 
 const SlideBarPost = (props: Props) => {
-    const { headContent } = props;
+    const { headContent, setHeadContent } = props;
 
     return (
         <PerfectScrollbar className="px-5 pt-6">
-            <div className="cursor-pointer rounded-xl p-3 m-2 mb-4 flex justify-between items-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium px-5 py-2.5 mr-2">
+            <div className="cursor-pointer rounded-xl p-3 m-2 mb-4 flex justify-between items-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium px-5 py-2.5 mr-2"
+                onClick={() => {
+                    setHeadContent([...headContent, { id: 9, title: "New" }])
+                }}
+            >
                 <div>New</div>
                 <PlusSquare size={22} />
             </div>
