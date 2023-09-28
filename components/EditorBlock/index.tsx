@@ -8,11 +8,15 @@ import { useDebouncedCallback } from "use-debounce";
 import axios from 'axios';
 import FullLoading from "@/components/FullLoading";
 
-export default function Editor() {
+type Props = {
+  content: any;
+  setContent: any;
+};
+
+export default function Editor(props: Props) {
   const router = useRouter();
   const [saveStatus, setSaveStatus] = useState<string>("Saved");
-  const [content, setContent] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const { setContent, content } = props;
 
   async function patchRequest(publicId: string, title: string, document: any) {
     const response = await axios.put(
@@ -27,24 +31,6 @@ export default function Editor() {
     //   router.refresh();
     // });
   }
-
-  async function getPost() {
-    const response = await axios.get('https://nest-js-project.vercel.app/documents/all');
-    setContent(response.data[0].document);
-  }
-
-  useEffect(() => {
-    try {
-      setIsLoading(true);
-      getPost();
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
-    }
-  }, []);
 
   const debouncedUpdates = useDebouncedCallback(async ({ editor }) => {
     const json = editor.getJSON();
@@ -67,27 +53,27 @@ export default function Editor() {
 
   useEffect(() => {
     if (editor && content) {
-      editor.commands.setContent(content);
+      setTimeout(() => {
+        editor.commands.setContent(content);
+      });
     }
   }, [editor, content]);
 
   return (
     <Fragment>
-      {
-        isLoading ? <FullLoading /> : (<div
-          onClick={() => {
-            editor?.chain().focus().run();
-          }}
-          className="relative flex min-h-screen w-full cursor-text flex-col items-center p-10"
-        >
-          <div className=" w-full max-w-screen-lg">
-            <div className="absolute left-8 top-10 rounded-lg bg-gray-100 px-2 py-1 text-sm text-gray-400">
-              {saveStatus}
-            </div>
-            <EditorContent editor={editor} />
+      <div
+        onClick={() => {
+          editor?.chain().focus().run();
+        }}
+        className="relative flex min-h-screen w-full cursor-text flex-col items-center p-10"
+      >
+        <div className=" w-full max-w-screen-lg">
+          <div className="absolute top-0 rounded-lg bg-gray-100 px-2 py-1 text-sm text-gray-400">
+            {saveStatus}
           </div>
-        </div>)
-      }
+          <EditorContent editor={editor} />
+        </div>
+      </div>
     </Fragment>
   );
 }
