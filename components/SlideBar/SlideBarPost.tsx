@@ -4,7 +4,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
 type Props = {
-    headContent: Array<any> | any;
+    headContent: Array<any>;
 };
 
 const SlideBarPost = (props: Props) => {

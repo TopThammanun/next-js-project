@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Navbar from "../Navbar";
-import SlideBarPost from "../SlideBar/SlideBarPost";
+import SlideBar from "../SlideBar";
 type Props = {
     children: React.ReactNode;
     className?: string;
@@ -13,7 +13,7 @@ const LayoutSlideLeft = (props: Props) => {
             <div className="flex flex-grow">
                 <div className="max-lg:hidden">
                     <div className="h-[100dvh] min-w-[25rem] border-r transition-all sticky top-0">
-                        <SlideBarPost />
+                        <SlideBar />
                     </div>
                 </div>
                 <div className="z-10">
