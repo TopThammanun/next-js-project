@@ -3,21 +3,12 @@ import { useEffect, useState } from "react";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
-const SlideBarPost = () => {
-    const [headContent, setHeadContent] = useState([]);
+type Props = {
+    headContent: Array<any>;
+};
 
-    async function getPost() {
-        const response = await axios.get('https://nest-js-project.vercel.app/documents/all');
-        setHeadContent(response.data);
-    }
-
-    useEffect(() => {
-        try {
-            getPost();
-        } catch (e) {
-            console.log(e);
-        }
-    }, []);
+const SlideBarPost = (props: Props) => {
+    const { headContent } = props;
 
     return (
         <PerfectScrollbar className="px-5 pt-6">
