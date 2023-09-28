@@ -41,7 +41,7 @@ export default function Editor() {
       console.log(e);
     } finally {
       setTimeout(() => {
-        setIsLoading(true);
+        setIsLoading(false);
       }, 2000);
     }
   }, []);

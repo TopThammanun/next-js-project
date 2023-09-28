@@ -1,4 +1,7 @@
 import React, { Fragment } from "react";
+interface CubeStyle {
+    '--i': number;
+}
 
 const FullLoading = () => {
     return (
@@ -6,27 +9,26 @@ const FullLoading = () => {
             <div className="cube">
                 <div className="topD"></div>
                 <div>
-                    <span style={{ '--i': 0 }}></span>
-                    <span style={{ '--i': 1 }}></span>
-                    <span style={{ '--i': 2 }}></span>
-                    <span style={{ '--i': 3 }}></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-
                 <div className="cube2">
                     <div>
-                        <span style={{ '--i': 0 }}></span>
-                        <span style={{ '--i': 1 }}></span>
-                        <span style={{ '--i': 2 }}></span>
-                        <span style={{ '--i': 3 }}></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
 
                     <div className="cube3">
                         <div className="top3"></div>
                         <div>
-                            <span style={{ '--i': 0 }}></span>
-                            <span style={{ '--i': 1 }}></span>
-                            <span style={{ '--i': 2 }}></span>
-                            <span style={{ '--i': 3 }}></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
                 </div>
